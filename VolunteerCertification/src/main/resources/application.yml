@@ -1,0 +1,10 @@
+server:
+  port: 8082
+
+# datasource is in nacos
+
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+

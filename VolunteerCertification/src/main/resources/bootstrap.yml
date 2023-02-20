@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: VolunteerCertificationService
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 1.117.102.181:8848
+      config:
+        server-addr: 1.117.102.181:8848
+        file-extension: yaml

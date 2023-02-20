@@ -1,10 +1,10 @@
-package com.tongji.edu.tj_volunteer_certification_backend;
+package com.tongji.volunteercertification;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TjVolunteerCertificationBackendApplicationTests {
+class VolunteerCertificationApplicationTests {
 
     @Test
     void contextLoads() {
