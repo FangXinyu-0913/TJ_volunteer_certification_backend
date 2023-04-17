@@ -8,4 +8,6 @@ public interface VolunteerService {
     public JsonResultEntity getVolunteerInfo(String name, String volunteer_no);
 
     public JsonResultEntity getRedHat2022VolunteerInfo(String name, String student_id);
+
+    public JsonResultEntity getSciFestival2022VolunteerInfo(String name, String student_id);
 }

@@ -46,4 +46,16 @@ public class VolunteerController {
         return volunteerService.getRedHat2022VolunteerInfo(name, student_id);
     }
 
+    /**
+     * @method: getSciFestival2022VolunteerInfo
+     * @param name
+     * @param student_id
+     * @return eligible volunteer info
+     */
+    @RequestMapping(value = "sciFestival2022fall",method = RequestMethod.GET)
+    public JsonResultEntity getSciFestival2022VolunteerInfo(@RequestParam("name")String name, @RequestParam("student_id")String student_id)
+    {
+        return volunteerService.getSciFestival2022VolunteerInfo(name, student_id);
+    }
+
 }
