@@ -47,15 +47,15 @@ public class VolunteerController {
     }
 
     /**
-     * @method: getSciFestival2022VolunteerInfo
+     * @method: getPGSAVolunteerInfo2023Spring
      * @param name
      * @param student_id
+     * @param activity_name
      * @return eligible volunteer info
      */
-    @RequestMapping(value = "sciFestival2022fall",method = RequestMethod.GET)
-    public JsonResultEntity getSciFestival2022VolunteerInfo(@RequestParam("name")String name, @RequestParam("student_id")String student_id)
+    @RequestMapping(value = "GSU2023spring",method = RequestMethod.GET)
+    public JsonResultEntity getTJGSUVolunteerInfo2023Spring(@RequestParam("name")String name, @RequestParam("student_id")String student_id, @RequestParam("activity_name")String activity_name)
     {
-        return volunteerService.getSciFestival2022VolunteerInfo(name, student_id);
+        return volunteerService.getTJGSUVolunteerInfo2023Spring(name, student_id, activity_name);
     }
-
 }
