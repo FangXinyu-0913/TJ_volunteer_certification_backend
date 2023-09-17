@@ -58,4 +58,17 @@ public class VolunteerController {
     {
         return volunteerService.getTJGSUVolunteerInfo2023Spring(name, student_id, activity_name);
     }
+
+    /**
+     * @method: getTJUVSVounteerInfo2023
+     * @param name
+     * @param student_id
+     * @param activity_name
+     * @return eligible volunteer info
+     */
+    @RequestMapping(value = "TJUVS2023",method = RequestMethod.GET)
+    public JsonResultEntity getTJUVSVounteerInfo2023(@RequestParam("name")String name, @RequestParam("student_id")String student_id, @RequestParam("activity_name")String activity_name)
+    {
+        return volunteerService.getTJVSVolunteerInfo2023(name,student_id,activity_name);
+    }
 }

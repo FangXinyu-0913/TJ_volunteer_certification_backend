@@ -12,4 +12,5 @@ public interface VolunteerService {
 //    public JsonResultEntity getSciFestival2022VolunteerInfo(String name, String student_id);
 
     public JsonResultEntity getTJGSUVolunteerInfo2023Spring(String name, String student_id, String activity_name);
+    public JsonResultEntity getTJVSVolunteerInfo2023(String name, String student_id, String activity_name);
 }

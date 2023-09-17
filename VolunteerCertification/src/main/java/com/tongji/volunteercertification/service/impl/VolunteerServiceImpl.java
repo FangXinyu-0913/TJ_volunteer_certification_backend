@@ -4,6 +4,7 @@ import com.tongji.volunteercertification.entity.*;
 import com.tongji.volunteercertification.repository.EpidemicEntityRepo;
 import com.tongji.volunteercertification.repository.Redhat2022FallEntityRepo;
 import com.tongji.volunteercertification.repository.Tjgsu2023SpringCertificationEntityRepo;
+import com.tongji.volunteercertification.repository.TjuVs2023CertificationEntityRepo;
 import com.tongji.volunteercertification.service.VolunteerService;
 
 import org.springframework.stereotype.Service;
@@ -28,6 +29,9 @@ public class VolunteerServiceImpl implements VolunteerService {
 
     @Resource
     Tjgsu2023SpringCertificationEntityRepo tjgsu2023SpringCertificationEntityRepo;
+
+    @Resource
+    TjuVs2023CertificationEntityRepo tjuVs2023CertificationEntityRepo;
     @Override
     public JsonResultEntity getVolunteerInfo(String name, String volunteer_no) {
         JsonResultEntity message = new JsonResultEntity();
@@ -69,6 +73,24 @@ public class VolunteerServiceImpl implements VolunteerService {
         JsonResultEntity message = new JsonResultEntity();
         try{
             List<Tjgsu2023SpringCertificationEntity> VolunteerEntitiesInfo = tjgsu2023SpringCertificationEntityRepo.findTjgsu2023SpringCertEntities(name,student_id,activity_name);
+            message.data.put("success", VolunteerEntitiesInfo.size());
+            message.data.put("info", VolunteerEntitiesInfo);
+            message.errorCode = 200;
+            message.status = true;
+        }catch (Exception e){
+            message.data.put("error", e.getMessage());
+            message.errorCode = 300;
+            message.status = false;
+            return message;
+        }
+        return message;
+    }
+
+    @Override
+    public JsonResultEntity getTJVSVolunteerInfo2023(String name, String student_id, String activity_name) {
+        JsonResultEntity message = new JsonResultEntity();
+        try{
+            List<TjuVs2023CertificationEntity> VolunteerEntitiesInfo = tjuVs2023CertificationEntityRepo.findTjuVs2023CertEntities(name,student_id,activity_name);
             message.data.put("success", VolunteerEntitiesInfo.size());
             message.data.put("info", VolunteerEntitiesInfo);
             message.errorCode = 200;
